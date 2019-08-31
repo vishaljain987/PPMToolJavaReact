@@ -333,3 +333,13 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag nam
 2019-09-01 04:00:48,751 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2019-09-01 04:00:48,754 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-09-01 04:00:48,755 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nancyjain/Desktop/JavaReactProject/PPMTool/src/test/resources
+2019-09-01 04:06:41,417 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-01 04:06:41,427 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-09-01 04:06:41,428 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-09-01 04:06:41,432 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-01 04:06:41,432 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nancyjain/Desktop/JavaReactProject/PPMTool/src/test/resources
+2019-09-01 04:06:56,910 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-01 04:06:56,911 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-09-01 04:06:56,913 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-09-01 04:06:56,918 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-01 04:06:56,918 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/nancyjain/Desktop/JavaReactProject/PPMTool/src/test/resources
