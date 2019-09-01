@@ -7,5 +7,9 @@ import com.learning.PPMTool.domain.Project;
 
 @Repository
 public interface ProjectRepository extends CrudRepository<Project, Long>{
+
+	Project findByProjectIdentifier(String projectIdentifier);
+
+	void deleteByProjectIdentifier(String projectIdentifier);
 	
 }
