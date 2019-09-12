@@ -2,17 +2,21 @@ package com.learning.PPMTool.domain;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Project {
@@ -40,10 +44,15 @@ public class Project {
 	private Date end_date;
 	
 	@JsonFormat(pattern="yyyy-mm-dd")
+	@Column(updatable=false)
 	private Date created_At;
 	
 	@JsonFormat(pattern="yyyy-mm-dd")
 	private Date updated_At;
+	
+	@OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL, mappedBy="project")
+	@JsonIgnore
+	private Backlog backlog;
 	
 	public Project(){
 		
@@ -145,6 +154,15 @@ public class Project {
 		this.updated_At = updated_At;
 	}
 
+
+	public Backlog getBacklog() {
+		return backlog;
+	}
+
+
+	public void setBacklog(Backlog backlog) {
+		this.backlog = backlog;
+	}
 
 
 	@PrePersist
