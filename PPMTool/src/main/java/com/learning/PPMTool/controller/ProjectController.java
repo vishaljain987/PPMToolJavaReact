@@ -1,5 +1,6 @@
 package com.learning.PPMTool.controller;
 
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,31 +38,31 @@ public class ProjectController {
 	
 	//handles both create and update
 	@PostMapping("")
-	public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project, BindingResult result){
+	public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project, BindingResult result, Principal principal){
 		
 		if(result.hasErrors()){
 			return mapValidationErrorService.mapValidationService(result);
 		}
 		
-		Project newProject = projectService.saveOrUpdateProject(project);
+		Project newProject = projectService.saveOrUpdateProject(project, principal.getName());
 		return new ResponseEntity<Project>(newProject, HttpStatus.CREATED);
 		
 	}
 	
 	@GetMapping("/{projectId}")
-	public ResponseEntity<?> getProjectByIdentifier(@PathVariable String projectId){
-		Project project = projectService.findProjectByIdentifier(projectId);
+	public ResponseEntity<?> getProjectByIdentifier(@PathVariable String projectId, Principal principal){
+		Project project = projectService.findProjectByIdentifier(projectId, principal.getName());
 		return new ResponseEntity<Project>(project, HttpStatus.OK);
 	}
 	
 	@GetMapping("/all")
-	public Iterable<Project> getAllProject(){
-		return projectService.findAllProjects();
+	public Iterable<Project> getAllProject(Principal principal){
+		return projectService.findAllProjects(principal.getName());
 	}
 	
 	@DeleteMapping("/{projectId}")
-	public ResponseEntity<?> deleteProject(@PathVariable String projectId){
-		projectService.deleteProjectByIdentifier(projectId);
+	public ResponseEntity<?> deleteProject(@PathVariable String projectId, Principal principal){
+		projectService.deleteProjectByIdentifier(projectId, principal.getName());
 		return new ResponseEntity<String>("Project with Id "+projectId+" was deleted", HttpStatus.OK);
 	}
 	
